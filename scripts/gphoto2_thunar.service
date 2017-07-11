@@ -4,7 +4,7 @@ BindsTo=dev-gphoto2.device
 After=dev-gphoto2.device
 
 [Service]
-ExecStart=/usr/local/bin/gphoto2_thunar
+ExecStart=/usr/bin/gphoto2_thunar
 Type=oneshot
 StandardOutput=journal
 
