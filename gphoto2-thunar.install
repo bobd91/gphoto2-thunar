@@ -1,4 +1,4 @@
 post_install() {
     echo "To enable camera detection then run the following as user (not root):"
-    echo "systemctl enable gphoto2_thunar"
+    echo "systemctl --user enable gphoto2_thunar"
 }
