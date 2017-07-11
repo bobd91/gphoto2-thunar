@@ -8,12 +8,15 @@ pkgname=gphoto2-thunar
 pkgver=1.0
 pkgrel=1
 pkgdesc="Start thunar mapped to usb connected camera, currently only Canon EOS 400D and PowerShot SX50 HS"
+arch=('i686' 'x86_64')
+url="https://github.com/bobd91/gphoto2-thunar"
 license=('GPL')
 depends=('gphoto2' 'gvfs-gphoto2')
 source=("git://github.com/bobd91/gphoto2-thunar")
+sha1sums=('SKIP')
 install=gphoto2-thunar.install
 
 package() {
-	cd "ghoto-thunar"
+	cd "gphoto2-thunar"
 	make DESTDIR="$pkgdir/" install
 }
