@@ -1,0 +1,12 @@
+[Unit]
+Description=Start thunar with gphoto2://[usb,...] path
+BindsTo=dev-gphoto2.device
+After=dev-gphoto2.device
+
+[Service]
+ExecStart=/usr/local/bin/gphoto2_thunar
+Type=oneshot
+StandardOutput=journal
+
+[Install]
+WantedBy=dev-gphoto2.device

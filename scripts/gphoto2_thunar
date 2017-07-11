@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Open thunar with camera direcory loaded
+# Can be run from command line but can also be run
+# from udev/systemd
+
+# Grab camera port and device numbers
+CAMPORT=$(gphoto2 --auto-detect | grep 'usb:' | cut -c 36- | sed 's/ //g')
+
+# Have to delay start of Thunar as Canon EOS 400D seems to block USB somehow
+# and Thunar consistently produces an error
+# The following systemd horrible syntax starts prog in 1 second
+systemd-run \
+	--user\
+       	--on-active=1s\
+       	--timer-property=AccuracySec=1s\
+       	thunar gphoto2://[usb:${CAMPORT}]/DCIM

@@ -1,0 +1,2 @@
+SUBSYSTEM=="usb", ACTION=="add", ATTRS{idVendor}=="04a9", ATTRS{idProduct}=="3110", SYMLINK+="gphoto2", TAG+="systemd"
+SUBSYSTEM=="usb", ACTION=="add", ATTRS{idVendor}=="04a9", ATTRS{idProduct}=="3259", SYMLINK+="gphoto2", TAG+="systemd"
